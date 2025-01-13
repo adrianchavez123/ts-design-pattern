@@ -22,29 +22,71 @@ b = { abc: true, def: false, ghi: true };
 console.log(a[123]);
 console.log(b["def"]);
 
-class Cat {
+// class Cat {
+//   name: string;
+//   stepsWalked: number = 0;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   walk(steps: number): void {
+//     console.log(this.name + " cat has walked " + steps + " steps.");
+//     this.stepsWalked += steps;
+//   }
+
+//   totalStepCount(): number {
+//     return this.stepsWalked;
+//   }
+// }
+
+// const CAT = new Cat("Cosmo");
+// CAT.walk(20);
+// CAT.walk(20);
+// console.log(
+//   CAT.name +
+//     " the cat, has walked a total of  " +
+//     CAT.totalStepCount() +
+//     " steps"
+// );
+
+interface IAnimal {
   name: string;
-  stepsWalked: number = 0;
-  constructor(name: string) {
+  age: number;
+
+  feed(food: string, amount: number): void;
+}
+
+class Cat implements IAnimal {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
     this.name = name;
+    this.age = age;
   }
-
-  walk(steps: number): void {
-    console.log(this.name + " cat has walked " + steps + " steps.");
-    this.stepsWalked += steps;
-  }
-
-  totalStepCount(): number {
-    return this.stepsWalked;
+  feed(food: string, amount: number): void {
+    console.log(
+      "Feeding " + this.name + " the Cat " + amount + " kg of " + food
+    );
   }
 }
 
-const CAT = new Cat("Cosmo");
-CAT.walk(20);
-CAT.walk(20);
-console.log(
-  CAT.name +
-    " the cat, has walked a total of  " +
-    CAT.totalStepCount() +
-    " steps"
-);
+class Dog implements IAnimal {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  feed(food: string, amount: number): void {
+    console.log(
+      "Feeding " + this.name + " the Dog " + amount + " kg of " + food
+    );
+  }
+}
+
+const CAT = new Cat("Cosmo", 8);
+const DOG = new Dog("Rusty", 12);
+CAT.feed("Fish", 0.1);
+DOG.feed("Beef", 0.25);
