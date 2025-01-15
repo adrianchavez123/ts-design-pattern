@@ -183,45 +183,86 @@ console.log(b["def"]);
 
 // //const CAT2 new Animal("Cosmo", 8); is not allowed
 
-abstract class Animal {
-  abstract name: string;
-  age = -1;
-  constructor() {}
+// abstract class Animal {
+//   abstract name: string;
+//   age = -1;
+//   constructor() {}
 
-  abstract feed(food: string, amount: number): void;
+//   abstract feed(food: string, amount: number): void;
+// }
+
+// class Cat extends Animal {
+//   name: string;
+//   constructor(name: string, age: number) {
+//     super();
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   feed(food: string, amount: number): void {
+//     console.log(
+//       "Feeding " + this.name + " the Cat " + amount + " kg of " + food
+//     );
+//   }
+// }
+
+// class Dog extends Animal {
+//   name: string;
+//   constructor(name: string, age: number) {
+//     super();
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   feed(food: string, amount: number): void {
+//     console.log(
+//       "Feeding " + this.name + " the Dog " + amount + " kg of " + food
+//     );
+//   }
+// }
+
+// const CAT = new Cat("Cosmo", 8);
+// const DOG = new Dog("Rusty", 12);
+// CAT.feed("Fish", 0.1);
+// DOG.feed("Beef", 0.25);
+
+// class Cat {
+//   //private name: string;  //private only on ts
+//   public name: string; //default
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+
+// const CAT = new Cat("Cosmo");
+// console.log(CAT.name);
+
+// class Cat {
+//   #name: string;
+//   constructor(name: string) {
+//     this.#name = name;
+//   }
+// }
+
+// const CAT = new Cat("Cosmo");
+// console.log(CAT.#name); //this generates a compilation error
+
+class Animal {
+  protected name: string;
+  protected age: number;
+
+  constructor(name: string, age: number) {
+    this.age = age;
+    this.name = name;
+  }
 }
 
 class Cat extends Animal {
-  name: string;
   constructor(name: string, age: number) {
-    super();
-    this.name = name;
-    this.age = age;
-  }
-
-  feed(food: string, amount: number): void {
-    console.log(
-      "Feeding " + this.name + " the Cat " + amount + " kg of " + food
-    );
-  }
-}
-
-class Dog extends Animal {
-  name: string;
-  constructor(name: string, age: number) {
-    super();
-    this.name = name;
-    this.age = age;
-  }
-
-  feed(food: string, amount: number): void {
-    console.log(
-      "Feeding " + this.name + " the Dog " + amount + " kg of " + food
-    );
+    super(name, age);
+    console.log(this.name);
   }
 }
 
 const CAT = new Cat("Cosmo", 8);
-const DOG = new Dog("Rusty", 12);
-CAT.feed("Fish", 0.1);
-DOG.feed("Beef", 0.25);
+// console.log(CAT.name); tsc complains but JS doesn't
