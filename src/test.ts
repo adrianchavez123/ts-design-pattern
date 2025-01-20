@@ -266,3 +266,57 @@ class Cat extends Animal {
 
 const CAT = new Cat("Cosmo", 8);
 // console.log(CAT.name); tsc complains but JS doesn't
+
+class ClassWithProperty {
+  abc = 123;
+}
+
+class ClassWithStaticProperty {
+  static abc = 123;
+}
+
+class ClassWithMethod {
+  method() {
+    return 123;
+  }
+}
+
+class ClassWithStaticMethod {
+  static method() {
+    return 123;
+  }
+}
+
+const CLASS_A = new ClassWithProperty();
+console.log(CLASS_A.abc);
+
+const CLASS_B = new ClassWithStaticProperty();
+//console.log(CLASS_B.abc); undefined. 'abc' does not
+// exist on CLASS_B instance.
+// You must reference it via the class name instead
+console.log(ClassWithStaticProperty.abc);
+
+const CLASS_C = new ClassWithMethod();
+console.log(CLASS_C.method());
+
+const CLASS_D = new ClassWithStaticMethod();
+// console.log(CLASS_D.method()); // error. CLASS_D.method
+// is not a function
+console.log(ClassWithStaticMethod.method());
+
+class Circle {
+  radius: number;
+  static PI = 3.14;
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+}
+
+console.log("Circle.PI " + Circle.PI);
+
+const CIRCLE1 = new Circle(1);
+const CIRCLE2 = new Circle(2);
+const CIRCLE3 = new Circle(3);
+console.log("CIRCLE1 Area = " + Circle.PI * CIRCLE1.radius ** 2);
+console.log("CIRCLE2 Area = " + Circle.PI * CIRCLE2.radius ** 2);
+console.log("CIRCLE2 Area = " + Circle.PI * CIRCLE3.radius ** 2);
