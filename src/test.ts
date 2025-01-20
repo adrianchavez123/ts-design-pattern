@@ -247,25 +247,25 @@ console.log(b["def"]);
 // const CAT = new Cat("Cosmo");
 // console.log(CAT.#name); //this generates a compilation error
 
-class Animal {
-  protected name: string;
-  protected age: number;
+// class Animal {
+//   protected name: string;
+//   protected age: number;
 
-  constructor(name: string, age: number) {
-    this.age = age;
-    this.name = name;
-  }
-}
+//   constructor(name: string, age: number) {
+//     this.age = age;
+//     this.name = name;
+//   }
+// }
 
-class Cat extends Animal {
-  constructor(name: string, age: number) {
-    super(name, age);
-    console.log(this.name);
-  }
-}
+// class Cat extends Animal {
+//   constructor(name: string, age: number) {
+//     super(name, age);
+//     console.log(this.name);
+//   }
+// }
 
-const CAT = new Cat("Cosmo", 8);
-// console.log(CAT.name); tsc complains but JS doesn't
+// const CAT = new Cat("Cosmo", 8);
+// // console.log(CAT.name); tsc complains but JS doesn't
 
 class ClassWithProperty {
   abc = 123;
