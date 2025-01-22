@@ -23,3 +23,39 @@ console.log(DOG.name);
 // Actor modal
 //sequence of commands
 // share the unique stack that can be big
+
+//abstract factory
+//the app doesn't need to know about the
+// objects that the abstract factory make
+//  (individual shape for example)
+// hidden dependency the number of make methods
+// example
+// makeCircle()
+// makeTriangle()
+// makeSquare()
+
+// you can have a single make method
+// with a parameter with the type
+// enums is not a solution to do not need
+// to change the app
+//it is better to use strings
+// and have a getShape method that
+// returns the valid strings that can
+// be used to makeShape(string: type)
+
+//factory method
+// not necesary an instance of the factory
+//create the instance of the application
+//just one directive
+// same as abstract factory but without the interface
+
+//prototype
+// logically equivalent to abstract factory
+// but exchanges objects for methods
+// initialize the field
+// you have to use cast to use the setters
+
+//if you what to initilize you need to know the type
+// of the object
+
+// static type
