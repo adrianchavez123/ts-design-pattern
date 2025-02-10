@@ -24,7 +24,7 @@ console.log(DOG.name);
 //sequence of commands
 // share the unique stack that can be big
 
-//abstract factory
+//abstract factory pattern
 //the app doesn't need to know about the
 // objects that the abstract factory make
 //  (individual shape for example)
@@ -43,13 +43,13 @@ console.log(DOG.name);
 // returns the valid strings that can
 // be used to makeShape(string: type)
 
-//factory method
+//factory method pattern
 // not necesary an instance of the factory
 //create the instance of the application
 //just one directive
 // same as abstract factory but without the interface
 
-//prototype
+//prototype pattern
 // logically equivalent to abstract factory
 // but exchanges objects for methods
 // initialize the field
@@ -59,3 +59,16 @@ console.log(DOG.name);
 // of the object
 
 // static type
+
+// Strategy pattern
+// Its simple,like a simple interface
+// where all the classes that inherits it
+// uses the methods and build the implementation
+// external polymorphisom
+// if coupling is an issue this works better than
+// template method
+// easier to deploy
+
+// template method pattern
+// internal polymorphisom
+// the structor is in the instance
