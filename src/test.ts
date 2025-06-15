@@ -287,10 +287,10 @@ class ClassWithStaticMethod {
   }
 }
 
-const CLASS_A = new ClassWithProperty();
-console.log(CLASS_A.abc);
+const CLASS_AA = new ClassWithProperty();
+console.log(CLASS_AA.abc);
 
-const CLASS_B = new ClassWithStaticProperty();
+const CLASS_BB = new ClassWithStaticProperty();
 //console.log(CLASS_B.abc); undefined. 'abc' does not
 // exist on CLASS_B instance.
 // You must reference it via the class name instead
